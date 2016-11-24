@@ -53,7 +53,7 @@ function clickStreamProcessor(emitter, cfg) {
         callback(error);
         return;
       }
-      log.info(util.format('Successfully uploaeded data to s3 file: %s', key));
+      log.info(util.format('Successfully uploaded data to s3 file: %s', key));
       checkpointer.checkpoint(sequenceNumber, function(e, seq) {
         if (!e) {
           log.info('Successful checkpoint at sequence number: %s', sequenceNumber);
