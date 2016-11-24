@@ -17,7 +17,7 @@ permissions and limitations under the License.
 
 var config = module.exports = {
   kinesis : {
-    region : 'us-west-2a'
+    region : 'us-west-2'
   },
 
   sampleProducer : {
