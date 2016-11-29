@@ -18,37 +18,9 @@ var path = require('path');
 var util = require('util');
 var kcl = require('../../..');
 var logger = require('../../util/logger');
-/*
-var WebSocket = require('ws');
-var ws = new WebSocket('ws://localhost:8080');
-var output = [];
-
-ws.on('open', function open() {
-    ws.send('something');
-});
-*/
-
 var io = require('socket.io-client');
 var serverUrl = 'http://localhost:3000';
 var conn = io.connect(serverUrl);
-/*
-
-//Set the views folder location for the app
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/views/showData.html');
-});
-
-
-io.on('connection', function (client) {
-    //console.log('Started the client socket.');
-    io.emit('livestream', {for: 'everyone'});
-});
-
-io.listen(3000);
-*/
 
 conn.emit('data', 'Probe message');
 
@@ -84,9 +56,6 @@ function recordProcessor() {
                 sequenceNumber = record.sequenceNumber;
                 partitionKey = record.partitionKey;
                 log.info(util.format('ShardID: %s, Record: %s, SeqenceNumber: %s, PartitionKey:%s', shardId, data, sequenceNumber, partitionKey));
-                //output.push(data);
-                //ws.send(data);
-                //io.emit('livestream', data);
                 conn.emit('data', data);
             }
             if (!sequenceNumber) {
