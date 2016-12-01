@@ -23,6 +23,8 @@ var serverUrl = 'http://localhost:3000';
 var conn = io.connect(serverUrl);
 
 conn.emit('data', 'Probe message');
+console.log("*********************************\nSent probe message to server :"+serverUrl
+    +"**********************************************************");
 
 /**
  * A simple implementation for the record processor (consumer) that simply writes the data to a log file.
