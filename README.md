@@ -1,5 +1,17 @@
 # Amazon Kinesis Client Library for Node.js
 
+For CMPE 281, the changes have been made in the /samples/basic_sample/consumer directory.
+The sample_kcl_app.js has been modified to write incoming data to a local NodeJS server at port 3000.
+
+The /samples/basic_sample/consumer/sample.properties & anomaly_sample.properties files have been modidfied to reflect the properties of the Kinesis stream used by this application.
+
+The /samples/basic_sample/data directory contains a sample .csv file that was used for testing data generation(It is not used in the final version of the application).
+
+
+The below README is sourced from Amazon's Github repo at : 
+
+https://github.com/awslabs/amazon-kinesis-client-nodejs 
+
 This package provides an interface to the [Amazon Kinesis Client Library][amazon-kcl] (KCL) [MultiLangDaemon][multi-lang-daemon] for the Node.js framework.
 
 Developers can use the KCL to build distributed applications that process streaming data reliably at scale. The KCL takes care of many of the complex tasks associated with distributed computing, such as load-balancing across multiple instances, responding to instance failures, checkpointing processed records, and reacting to changes in stream volume.
